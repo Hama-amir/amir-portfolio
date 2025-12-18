@@ -208,7 +208,7 @@ export const leadershipExperience = [
     dates: "Jan 2023 - Present",
     link: "https://www.taqwacon.com",
     descriptionPoints: [
-      "Founded and led a 700+ attendee convention, generating $30K revenue (17% profit)[cite: 93, 95].",
+      "Founded and led a 700+ attendee convention, generating $30K revenue (17% profit).",
       "Managed a 120+ person cross-functional team using Gantt charts, risk registers, and stakeholder cadences.",
       "Delivered a custom ticketing & analytics platform, enabling 40K+ users and $9K online sales."
     ],
@@ -259,8 +259,49 @@ export const leadershipExperience = [
 ];
 
 export const skills = {
-  languages: ["C++", "Python", "SQL", "MatLab", "RobotC", "PowerShell"],
-  tools: ["Unreal Engine", "Databricks", "Docker", "Git/GitHub", "Jira", "Confluence"],
-  engineering: ["SolidWorks", "AutoCAD", "FEA", "GD&T", "Control Systems"],
-  product: ["Agile/Scrum", "KPI Tracking", "Risk Mitigation", "Product Strategy", "Excel (Data Analysis)"]
+  languages: [
+    "C++", 
+    "Python", 
+    "SQL", 
+    "MatLab", 
+    "RobotC", 
+    "PowerShell"
+  ],
+  devtools: [
+    "Databricks", 
+    "Docker", 
+    "Git/GitHub", 
+    "Linux/Ubuntu", 
+    "Unreal Engine", 
+    "VS Code", 
+    "PowerShell",
+    "MongoDB"
+  ],
+  engineering: [
+    "SolidWorks", 
+    "AutoCAD", 
+    "FEA", 
+    "GD&T", 
+    "Control Systems",
+    "Computer Vision",
+    "Fluid Mechanics"
+  ],
+  product: [
+      "Jira", "Confluence", "Trello", "ClickUp", "Notion", 
+      "Linear", "Asana", "Slack", "Microsoft Project"
+  ],
+  designData: [
+    "Figma", "Canva", "Miro", "Google Analytics", 
+    "Tableau", "PowerBI", "Streamlit"
+  ],
+  softSkills: [
+    "Agile/Scrum", 
+    "Waterfall",
+    "KPI/OKR Tracking", 
+    "Risk Mitigation", 
+    "Product Strategy", 
+    "User Research",
+    "Stakeholder Management",
+    "Gantt Charts"
+  ]
 };
