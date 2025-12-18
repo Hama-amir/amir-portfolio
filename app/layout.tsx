@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Immersive Portfolio | Bridging Physical and Digital",
+  title: "Amir Hamadache | Mechatronics & Product Management",
   description:
-    "High-end dark minimalist portfolio blending software, mechanical, and product work with tactile motion.",
+    "Portfolio of Amir Hamadache – bridging the gap between hardware engineering and digital product.",
 };
 
 export default function RootLayout({
