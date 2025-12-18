@@ -29,7 +29,7 @@ export default function Home() {
             className="flex-1 space-y-6 text-center md:text-left"
           >
             <span className="inline-block rounded-full border border-cyan-900/50 bg-cyan-950/30 px-3 py-1 text-sm font-medium uppercase tracking-wider text-cyan-400">
-              Available for Hire 2025
+              Available for Hire (May 2025)
             </span>
 
             <h1 className="text-4xl font-bold leading-tight text-slate-100 md:text-6xl">
