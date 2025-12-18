@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Intelligent Tic-Tac-Toe Robot",
-    description: "EV3 robot running 550+ lines of C-based firmware. Uses Minimax-style logic and sensor arrays (Color/Gyro) to obstruct players and execute winning strategies.",
+    description: "Explored Human-Robot Interaction (HRI) latency and algorithmic efficiency. Implemented Minimax algorithm in C firmware with <200ms sensor-to-action latency.",
     role: "Embedded Developer",
     techStack: ["RobotC", "C", "Embedded Systems", "Sensors"],
     category: "software",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
   {
     id: 6,
     title: "Midnight Sun Solar Rayce Team",
-    description: "Designed 25+ assemblies for a solar EV. Managed interior module integration and FEA analysis for lightweighting, contributing to an automotive-grade platform.",
+    description: "Balancing rigid aerodynamic constraints with manufacturing feasibility. Managed BOM for interior subsystems; reduced assembly weight by 15% via FEA optimization.",
     role: "Mechanical Designer",
     techStack: ["SolidWorks", "FEA", "Automotive Design", "Subsystem Integration"],
     category: "mechanical",

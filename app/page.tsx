@@ -41,15 +41,13 @@ export default function Home() {
             </h1>
 
             <h2 className="text-2xl font-light text-slate-400 md:text-3xl">
-              The Creative Technical{" "}
-              <span className="font-medium text-slate-200">Problem Solver.</span>
+              <span className="font-medium text-slate-200">Technical Product Manager & Mechatronics Engineer.</span>
             </h2>
 
             <p className="mx-auto max-w-lg text-lg leading-relaxed text-slate-400 md:mx-0">
-              Mechatronics Engineer turned
-              <span className="font-semibold text-slate-200"> Software Developer</span> &
-              <span className="font-semibold text-slate-200"> Product Manager</span>. I bridge
-              the gap between complex hardware and user-obsessed software.
+              I manage the chaos between
+              <span className="font-semibold text-slate-200"> Hardware </span> deadlines & 
+              <span className="font-semibold text-slate-200"> Software </span> Sprints. 
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4 md:justify-start">
