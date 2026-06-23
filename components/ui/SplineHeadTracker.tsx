@@ -46,7 +46,6 @@ export function SplineHeadTracker({
   const [app, setApp] = useState<SplineRuntimeApp | null>(null)
   const posRef = useRef({ x: 0, y: 0 })
   const rafRef = useRef<number | null>(null)
-  const lastLogRef = useRef(0)
   const prevRot = useRef({ x: 0, y: 0 })
   const targetRef = useRef<SplineNode | null>(null)
 
@@ -63,16 +62,7 @@ export function SplineHeadTracker({
     const chosen = byName[0] ?? null
     targetRef.current = chosen
 
-    try {
-      const topNames = byName.map((node) => node.name || '<unnamed>')
-      ;(window as typeof window & { __splineNodeNames?: string[]; __splineChosenNodes?: string[] }).__splineNodeNames = topNames
-      ;(window as typeof window & { __splineChosenNodes?: string[] }).__splineChosenNodes = topNames
-      console.log('SplineHeadTracker: selected target', chosen?.name || '<unnamed>', {
-        topCandidates: topNames,
-      })
-    } catch {
-      // ignore debug hook errors
-    }
+
 
     const handleMouseMove = (event: MouseEvent) => {
       posRef.current = { x: event.clientX, y: event.clientY }
@@ -156,25 +146,7 @@ export function SplineHeadTracker({
         runtimeApp.requestRender?.()
       }
 
-      try {
-        const now = Date.now()
-        if (now - lastLogRef.current > 200) {
-          console.log('SplineHeadTracker: headTrack (Cartesian)', {
-            cursorRaw: posRef.current,
-            cursorClamped: { x, y },
-            heroRect,
-            headCenter: { headX, headY },
-            relCoords: { dx, dy },
-            relBounds: { x_left, x_right, y_top, y_bottom },
-            target: { x: targetRotX, y: targetRotY },
-            applied: { x: prevRot.current.x, y: prevRot.current.y },
-            targetName: target?.name || '<none>',
-          })
-          lastLogRef.current = now
-        }
-      } catch {
-        // ignore debug errors
-      }
+
 
       rafRef.current = requestAnimationFrame(tick)
     }
@@ -211,8 +183,6 @@ export function SplineHeadTracker({
               } catch {
                 // ignore debug hook errors
               }
-
-              console.log('SplineHeadTracker: onLoad - splineApp received')
               setApp(splineApp as SplineRuntimeApp)
             }}
           />
