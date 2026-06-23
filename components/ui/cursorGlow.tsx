@@ -21,10 +21,13 @@ export function CursorGlow() {
     const render = () => {
       const { x, y } = posRef.current
       if (el) {
-        // Center the glow on the cursor by subtracting half the glow size
+        // Center the glow on the cursor by setting left/top (fixed positioning)
         const offsetX = x - GLOW_SIZE / 2
         const offsetY = y - GLOW_SIZE / 2
-        el.style.transform = `translate(${offsetX}px, ${offsetY}px)`
+        el.style.left = `${offsetX}px`
+        el.style.top = `${offsetY}px`
+
+        // (debug logs removed)
       }
       raf = requestAnimationFrame(render)
     }
@@ -46,16 +49,19 @@ export function CursorGlow() {
       aria-hidden="true"
       className="pointer-events-none fixed hidden md:block"
       style={{
-        width: GLOW_SIZE,
-        height: GLOW_SIZE,
+        position: 'fixed',
+        width: `${GLOW_SIZE}px`,
+        height: `${GLOW_SIZE}px`,
+        left: `-${GLOW_SIZE / 2}px`,
+        top: `-${GLOW_SIZE / 2}px`,
         borderRadius: '50%',
-        background: 'radial-gradient(circle at 50% 50%, rgba(6,182,212,0.2), rgba(6,182,212,0.1) 35%, transparent 65%)',
+        background: 'radial-gradient(circle at 50% 50%, rgba(6,182,212,0.25), rgba(6,182,212,0.12) 40%, transparent 70%)',
         mixBlendMode: 'screen',
-        boxShadow: '0 0 60px rgba(6,182,212,0.2)',
-        filter: 'blur(20px)',
-        left: 0,
-        top: 0,
+        boxShadow: '0 0 80px 20px rgba(6,182,212,0.15)',
+        filter: 'blur(25px)',
+        transformOrigin: '0 0',
         zIndex: 40,
+        willChange: 'left, top',
       }}
     />
   )
