@@ -1,18 +1,14 @@
 'use client';
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, type Project } from "@/lib/data";
 import { Timeline } from "@/components/Timeline";
-import { workExperience } from "@/lib/data"; 
-<<<<<<< HEAD
-import { SplineInteractive } from "@/components/ui/SplineInteractive";
-import { CursorGlow } from "@/components/ui/cursorGlow";
-=======
->>>>>>> parent of 95cf386 (implemented robot on hero page and moved profile pic to about)
+import { workExperience } from "@/lib/data";
+import { SplineHeadTracker } from "@/components/ui/SplineHeadTracker";
+import { CursorGlow } from "@/components/ui/cursorGlow"; 
 
 const featuredProjects = [
   projects.find((p) => String(p.id) === "1"),
@@ -24,7 +20,8 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 pb-20 pt-12 md:pt-24">
       {/* --- HERO SECTION --- */}
-      <section className="mx-auto mb-32 max-w-6xl">
+      <section className="mx-auto mb-32 max-w-6xl relative">
+        <CursorGlow />
         <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-20">
           {/* LEFT COLUMN: TEXT */}
           <motion.div
@@ -71,7 +68,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* RIGHT COLUMN: IMAGE */}
+          {/* RIGHT COLUMN: 3D ROBOT (hidden on mobile) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -79,30 +76,17 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -inset-1 animate-pulse rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-20 blur-2xl" />
-<<<<<<< HEAD
-            <div className="relative h-48 w-48 md:h-72 md:w-72 rounded-full border-4 border-slate-900 shadow-2xl overflow-hidden">
+            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-72 md:w-72">
               <div className="hidden md:block w-full h-full">
-                <SplineInteractive
+                <SplineHeadTracker
                   scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                   className="w-full h-full"
                 />
               </div>
-=======
-            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-72 md:w-72">
-              <Image
-                src="/profile.jpg"
-                alt="Profile Picture"
-                fill
-                className="object-cover"
-                priority
-              />
->>>>>>> parent of 95cf386 (implemented robot on hero page and moved profile pic to about)
             </div>
           </motion.div>
-          {/* Global cursor glow (md+) */}
-          <CursorGlow />
         </div>
-      </section>
+        </section>
       {/* --- EXPERIENCE TIMELINE --- */}
       <section className="mx-auto mb-32 max-w-4xl">
         <div className="mb-16 text-center">
