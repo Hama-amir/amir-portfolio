@@ -1,14 +1,18 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, type Project } from "@/lib/data";
 import { Timeline } from "@/components/Timeline";
 import { workExperience } from "@/lib/data"; 
+<<<<<<< HEAD
 import { SplineInteractive } from "@/components/ui/SplineInteractive";
 import { CursorGlow } from "@/components/ui/cursorGlow";
+=======
+>>>>>>> parent of 95cf386 (implemented robot on hero page and moved profile pic to about)
 
 const featuredProjects = [
   projects.find((p) => String(p.id) === "1"),
@@ -67,7 +71,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* RIGHT COLUMN: 3D ROBOT (hidden on mobile) */}
+          {/* RIGHT COLUMN: IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -75,6 +79,7 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -inset-1 animate-pulse rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-20 blur-2xl" />
+<<<<<<< HEAD
             <div className="relative h-48 w-48 md:h-72 md:w-72 rounded-full border-4 border-slate-900 shadow-2xl overflow-hidden">
               <div className="hidden md:block w-full h-full">
                 <SplineInteractive
@@ -82,6 +87,16 @@ export default function Home() {
                   className="w-full h-full"
                 />
               </div>
+=======
+            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-72 md:w-72">
+              <Image
+                src="/profile.jpg"
+                alt="Profile Picture"
+                fill
+                className="object-cover"
+                priority
+              />
+>>>>>>> parent of 95cf386 (implemented robot on hero page and moved profile pic to about)
             </div>
           </motion.div>
           {/* Global cursor glow (md+) */}
