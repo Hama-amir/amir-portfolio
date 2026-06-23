@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Download, Mail, Cpu, Kanban, Terminal, Palette, Activity, Zap, Gamepad2 } from "lucide-react";
 import { skills } from "@/lib/data";
 import SpotlightCard from "@/components/SpotlightCard";
@@ -11,50 +12,71 @@ export default function About() {
       
       {/* --- HERO / BIO SECTION --- */}
       <section className="mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl space-y-8"
-        >
-          <h1 className="text-4xl font-bold text-slate-100 md:text-6xl leading-tight">
-            Engineering the <br />
-            <span className="text-cyan-400">Physical & Digital.</span>
-          </h1>
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex-1 space-y-8"
+          >
+            <h1 className="text-4xl font-bold text-slate-100 md:text-6xl leading-tight">
+              Engineering the <br />
+              <span className="text-cyan-400">Physical & Digital.</span>
+            </h1>
 
-          <div className="space-y-6 text-lg leading-relaxed text-slate-400">
-            <p>
-              I am a <strong>Mechatronics Engineering student</strong> at the University of Waterloo. 
-              My expertise lies in the messy, complex intersection where hardware meets software.
-            </p>
-            <p>
-              From coding <strong>autonomous robots</strong> to managing <strong>large-scale tech events</strong>, 
-              I realized that the best products aren&apos;t just &quot;functional&quot;—they are intuitive, robust, and user-centric.
-            </p>
-            <p>
-              Now, I am pivoting into <strong>Technical Product Management</strong>. I use my engineering background to 
-              translate complex constraints into clear strategy, ensuring we build the <em>right</em> thing, the <em>right</em> way.
-            </p>
-          </div>
+            <div className="space-y-6 text-lg leading-relaxed text-slate-400">
+              <p>
+                I am a <strong>Mechatronics Engineering student</strong> at the University of Waterloo. 
+                My expertise lies in the messy, complex intersection where hardware meets software.
+              </p>
+              <p>
+                From coding <strong>autonomous robots</strong> to managing <strong>large-scale tech events</strong>, 
+                I realized that the best products aren&apos;t just &quot;functional&quot;—they are intuitive, robust, and user-centric.
+              </p>
+              <p>
+                Now, I am pivoting into <strong>Technical Product Management</strong>. I use my engineering background to 
+                translate complex constraints into clear strategy, ensuring we build the <em>right</em> thing, the <em>right</em> way.
+              </p>
+            </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className="group flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all hover:bg-cyan-400 hover:scale-105"
-            >
-              <Download size={18} /> Download Resume
-            </a>
-            <a
-              href="mailto:your.email@uwaterloo.ca"
-              className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 px-6 py-3 font-semibold text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
-            >
-              <Mail size={18} /> Contact Me
-            </a>
-          </div>
-        </motion.div>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                className="group flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all hover:bg-cyan-400 hover:scale-105"
+              >
+                <Download size={18} /> Download Resume
+              </a>
+              <a
+                href="mailto:your.email@uwaterloo.ca"
+                className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 px-6 py-3 font-semibold text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+              >
+                <Mail size={18} /> Contact Me
+              </a>
+            </div>
+          </motion.div>
 
-{/* --- DEFINING TRAJECTORY --- */}
+          {/* PROFILE PICTURE COLUMN */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex justify-center md:sticky md:top-24 md:flex-none"
+          >
+            <div className="absolute -inset-1 animate-pulse rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-20 blur-2xl" />
+            <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-72 md:w-72">
+              <Image
+                src="/profile.jpg"
+                alt="Profile Picture"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* --- DEFINING TRAJECTORY --- */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
