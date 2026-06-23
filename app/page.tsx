@@ -1,13 +1,14 @@
 'use client';
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, type Project } from "@/lib/data";
 import { Timeline } from "@/components/Timeline";
-import { workExperience } from "@/lib/data"; 
+import { workExperience } from "@/lib/data";
+import { SplineHeadTracker } from "@/components/ui/SplineHeadTracker";
+import { CursorGlow } from "@/components/ui/cursorGlow"; 
 
 const featuredProjects = [
   projects.find((p) => String(p.id) === "1"),
@@ -19,73 +20,70 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 pb-20 pt-12 md:pt-24">
       {/* --- HERO SECTION --- */}
-      <section className="mx-auto mb-32 max-w-6xl">
-        <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-20">
-          {/* LEFT COLUMN: TEXT */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="flex-1 space-y-6 text-center md:text-left"
-          >
-            <span className="inline-block rounded-full border border-cyan-900/50 bg-cyan-950/30 px-3 py-1 text-sm font-medium uppercase tracking-wider text-cyan-400">
-              Available for Hire (May 2025)
-            </span>
-
-            <h1 className="text-4xl font-bold leading-tight text-slate-100 md:text-6xl">
-              Hi, I&apos;m{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Amir Hamadache
+      <div data-hero-area className="mx-auto max-w-6xl pb-32 md:pb-40">
+        <section className="relative">
+          <CursorGlow />
+          <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-20">
+            {/* LEFT COLUMN: TEXT */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="flex-1 space-y-6 text-center md:text-left"
+            >
+              <span className="inline-block rounded-full border border-cyan-900/50 bg-cyan-950/30 px-3 py-1 text-sm font-medium uppercase tracking-wider text-cyan-400">
+                Available for Hire (Jan 2027)
               </span>
-              .
-            </h1>
 
-            <h2 className="text-2xl font-light text-slate-400 md:text-3xl">
-              <span className="font-medium text-slate-200">Technical Product Manager & Mechatronics Engineer.</span>
-            </h2>
+              <h1 className="text-4xl font-bold leading-tight text-slate-100 md:text-6xl">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Amir Hamadache
+                </span>
+              </h1>
 
-            <p className="mx-auto max-w-lg text-lg leading-relaxed text-slate-400 md:mx-0">
-              I manage the chaos between
-              <span className="font-semibold text-slate-200"> Hardware </span> deadlines & 
-              <span className="font-semibold text-slate-200"> Software </span> Sprints. 
-            </p>
+              <h2 className="text-2xl font-light text-slate-400 md:text-3xl">
+                <span className="font-medium text-slate-200">TECHNICAL PROGRAM MANAGER</span>
+              </h2>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-4 md:justify-start">
-              <Link
-                href="/software"
-                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 font-semibold text-slate-950 transition-transform duration-200 hover:scale-[1.02]"
-              >
-                View Software <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/mechanical"
-                className="flex items-center gap-2 rounded-full border border-cyan-500/60 bg-slate-950 px-6 py-3 font-semibold text-cyan-200 transition-colors duration-200 hover:border-cyan-300 hover:text-cyan-100"
-              >
-                View Engineering
-              </Link>
-            </div>
-          </motion.div>
+              <p className="mx-auto max-w-lg text-lg leading-relaxed text-slate-400 md:mx-0">
+                <span className="font-semibold text-slate-200"> Mechatronics Engineer</span> specializing in 
+                <span className="font-semibold text-slate-200"> Robotics</span>, 
+                <span className="font-semibold text-slate-200"> Hardware Systems</span>, and 
+                <span className="font-semibold text-slate-200"> AI Automation</span>.
+              </p>
 
-          {/* RIGHT COLUMN: IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            <div className="absolute -inset-1 animate-pulse rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-20 blur-2xl" />
-            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-72 md:w-72">
-              <Image
-                src="/profile.jpg"
-                alt="Profile Picture"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              <div className="flex flex-wrap justify-center gap-4 pt-4 md:justify-start">
+                <Link
+                  href="/about"
+                  className="flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 font-semibold text-slate-950 transition-transform duration-200 hover:scale-[1.02]"
+                >
+                  About Me <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* RIGHT COLUMN: 3D ROBOT (hidden on mobile) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
+            >
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-20 blur-2xl" />
+              <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-slate-900 shadow-2xl md:h-[432px] md:w-[432px]">
+                <div className="hidden h-full w-full md:block">
+                  <SplineHeadTracker
+                    scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                    className="h-full w-full"
+                    zoom={1.6}
+                    offsetY={20}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
       {/* --- EXPERIENCE TIMELINE --- */}
       <section className="mx-auto mb-32 max-w-4xl">
         <div className="mb-16 text-center">
@@ -98,7 +96,7 @@ export default function Home() {
             Professional Experience
           </motion.h2>
           <p className="mt-4 text-slate-400">
-            My professional journey from Quality Engineering to Technical Program Management.
+            My professional journey in Technical Program Management
           </p>
         </div>
         

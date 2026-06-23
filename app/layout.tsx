@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import { CursorGlow } from '@/components/ui/cursorGlow'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-200`}
       >
         <div className="min-h-screen bg-slate-950/90">
+          <CursorGlow />
           <Navbar />
           <main className="pb-20 pt-6">{children}</main>
         </div>

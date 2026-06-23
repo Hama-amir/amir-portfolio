@@ -116,10 +116,22 @@ export const projects: Project[] = [
   },
 ];
 
-// --- PROFESSIONAL WORK EXPERIENCE (Home Page) ---
 export const workExperience = [
   {
     id: 1,
+    role: "Factory Firmware TPM Intern",
+    company: "Tesla",
+    location: "Austin, TX",
+    dates: "Jan 2026 - Present",
+    descriptionPoints: [
+      "Drove Cybertruck Model Year 2027 firmware readiness by coordinating 19+ cross-functional teams on 9 NPI scope items and 8 provisioning impacts while managing cross-team dependencies to meet key milestone timelines.",
+      "Replaced manual NPI trial selftest reviews with an automated Python + Splunk pipeline, scaling adoption across 4 factories and eliminated 15+ hours of weekly engineering time.",
+      "Spearheaded firmware investigation for GFTX-built Model Y entry into a new market under FMVSS vs. ECE, documenting 20+ product/regulatory deltas, 20 tracked provisioning configs, and briefed 80+ stakeholders, enabling a clear decision on the preferred certification path."
+    ],
+    skills: ["Python", "Splunk", "Firmware", "NPI", "Cross-functional Coordination"]
+  },
+  {
+    id: 2,
     role: "Technical Program Manager Intern",
     company: "FluidAI Medical",
     location: "Kitchener, ON",
@@ -132,7 +144,7 @@ export const workExperience = [
     skills: ["LLMOps", "Docker", "Scrum Leadership", "Python"]
   },
   {
-    id: 2,
+    id: 3,
     role: "Product Manager Intern",
     company: "UWaterloo CCaRT Lab",
     location: "Waterloo, ON",
@@ -145,7 +157,7 @@ export const workExperience = [
     skills: ["Product Strategy", "SolidWorks", "Clinical Regulations", "NPI"]
   },
   {
-    id: 3,
+    id: 4,
     role: "R&D Hardware Engineer Intern",
     company: "Virtek Vision International",
     location: "Waterloo, ON",
@@ -158,7 +170,7 @@ export const workExperience = [
     skills: ["AI Training", "CVAT", "Docker", "Rapid Prototyping"]
   },
   {
-    id: 4,
+    id: 5,
     role: "Systems Quality Assurance Intern",
     company: "Virtek Vision International",
     location: "Waterloo, ON",
@@ -171,7 +183,7 @@ export const workExperience = [
     skills: ["PowerShell", "QA Automation", "Debugging"]
   },
   {
-    id: 5,
+    id: 6,
     role: "Quality Engineering Intern",
     company: "Ontario Drive & Gear",
     location: "New Hamburg, ON",
@@ -184,7 +196,7 @@ export const workExperience = [
     skills: ["CMM", "Process Optimization", "Data Analysis", "Manufacturing"]
   },
   {
-    id: 6,
+    id: 7,
     role: "Telecommunications Engineer Co-op",
     company: "WAJDA GROUP",
     location: "Kuwait",
